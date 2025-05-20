@@ -1,0 +1,746 @@
+/* ==========================================================================
+   Global Reset & Base Styles
+   ========================================================================== */
+
+* {
+  /* Box Model */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* Box Model */
+  height: 100%;
+}
+
+body {
+  /* Box Model */
+  display: flex;
+  flex-direction: column;
+  /* Typography */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  /* Visual */
+  background: #f9f9f9;
+}
+
+main {
+  /* Box Model */
+  flex: 1;
+}
+
+/* ==========================================================================
+   Layout Styles
+   ========================================================================== */
+
+.container {
+  /* Box Model */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ==========================================================================
+   Header & Navigation Styles
+   ========================================================================== */
+
+header {
+  /* Positioning */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Visual */
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+header .container {
+  /* Positioning */
+  position: relative; /* For positioning the dropdown */
+  /* Box Model */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logo left, nav right */
+  padding: 0.75rem 1rem;
+}
+
+header h1.logo {
+  /* Box Model */
+  margin: 0;
+  flex-shrink: 0; /* Prevent logo from shrinking too much */
+  /* Typography */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007acc;
+  white-space: nowrap;
+}
+
+.header-divider {
+  /* Box Model */
+  display: none; /* Hidden by default, can be enabled if needed */
+}
+
+header nav {
+  /* Box Model */
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  /* Box Model */
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  /* Typography */
+  list-style: none;
+}
+
+.nav-links a {
+  /* Box Model */
+  display: block;
+  padding: 0.5rem;
+  /* Typography */
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-links a:hover {
+  /* Typography */
+  color: #007acc;
+}
+
+.nav-links a.active {
+  /* Typography */
+  color: #fff;
+  /* Visual */
+  background-color: #007acc;
+  border-radius: 4px;
+}
+
+.nav-toggle {
+  /* Positioning */
+  z-index: 1001; /* Ensure toggle is above dropdown if it overlaps */
+  /* Box Model */
+  display: none; /* Hidden on desktop */
+  padding: 0.5rem;
+  margin-left: 0.5rem; /* Space from links if they were visible and then toggle shows */
+  /* Typography */
+  font-size: 1.5rem;
+  color: #333;
+  /* Visual */
+  background: none;
+  border: none;
+  /* Misc */
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Hero Section Styles
+   ========================================================================== */
+
+.hero {
+  /* Box Model */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 60vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  /* Typography */
+  color: #fff;
+  text-align: center;
+  /* Visual */
+  background: #007acc;
+}
+
+.hero .container {
+  /* Box Model */
+  max-width: 800px;
+}
+
+.hero h2 {
+  /* Box Model */
+  margin-bottom: 1rem;
+  /* Typography */
+  font-size: 2rem;
+  color: #fff !important;
+}
+
+.hero p {
+  /* Box Model */
+  margin-bottom: 0;
+  /* Typography */
+  font-size: 1.125rem;
+  color: #fff !important;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Button Styles
+   ========================================================================== */
+
+.btn {
+  /* Box Model */
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  /* Typography */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  /* Visual */
+  background: #007acc;
+  border-radius: 4px;
+  /* Misc */
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.btn:hover {
+  /* Typography */
+  color: #fff;
+  text-decoration: none;
+  /* Visual */
+  background: #005c99;
+}
+
+.btn-secondary {
+  /* Typography */
+  color: #007acc;
+  /* Visual */
+  background-color: #fff;
+  border: 2px solid #007acc;
+}
+
+.btn-secondary:hover {
+  /* Typography */
+  color: #fff;
+  /* Visual */
+  background-color: #007acc;
+  border-color: #007acc;
+}
+
+/* ==========================================================================
+   General Section Styles
+   ========================================================================== */
+
+section h2 {
+  /* General for all section titles unless overridden */
+  /* Box Model */
+  margin-bottom: 1rem;
+  /* Typography */
+  color: #007acc;
+  text-align: center;
+}
+
+/* Specific overrides for section titles that need to be left-aligned */
+#featured-projects h2,
+#home-about h2,
+.about h2,
+.projects h2,
+.contact h2,
+.resume h2 {
+  /* Typography */
+  text-align: left;
+}
+
+.section-padding {
+  /* Box Model */
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* ==========================================================================
+   Projects Section Styles
+   ========================================================================== */
+
+.projects-grid {
+  /* Box Model */
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+#featured-projects .projects-grid {
+  /* Box Model */
+  margin-bottom: 2rem;
+}
+
+.project-card {
+  /* Box Model */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  /* Visual */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  /* Misc */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  /* Visual */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  /* Misc */
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  /* Box Model */
+  margin-bottom: 0.75rem;
+  /* Typography */
+  color: #333;
+}
+
+.project-card p {
+  /* Box Model */
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  /* Typography */
+  font-size: 0.95rem;
+}
+
+.project-links a {
+  /* Box Model */
+  margin-right: 1rem;
+  /* Typography */
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.project-links a:last-child {
+  /* Box Model */
+  margin-right: 0;
+}
+
+.project-links a:hover {
+  /* Typography */
+  text-decoration: underline;
+}
+
+#featured-projects .view-all-projects-container {
+  /* Box Model */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* Typography */
+  text-align: center;
+}
+
+/* ==========================================================================
+   About Me Section Styles
+   ========================================================================== */
+
+#home-about {
+  /* Specific styles for the "About Me" section on the homepage */
+  /* Visual */
+  background-color: #e9ecef;
+}
+
+#home-about p {
+  /* Box Model */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Typography */
+  line-height: 1.8;
+  text-align: center;
+}
+
+.skills-list,
+.education-list {
+  /* Box Model */
+  margin-bottom: 1.5rem;
+  padding-left: 0; /* Remove default padding if you want to align with text */
+}
+
+.skills-list li,
+.education-list li {
+  /* Box Model */
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Contact Page & Form Styles
+   ========================================================================== */
+
+.contact {
+  /* Box Model */
+  padding: 1rem 0; /* Add some vertical padding within the contact section */
+}
+
+.contact > p {
+  /* Style for the introductory paragraph on contact page */
+  /* Box Model */
+  margin-bottom: 2rem; /* Increased space below intro */
+  /* Typography */
+  font-size: 1.05em;
+  color: #555;
+  line-height: 1.7;
+}
+
+.contact dl {
+  /* Definition list for contact details */
+  /* Box Model */
+  margin-bottom: 2.5rem; /* Increased space below contact details */
+}
+
+.contact h3 {
+  /* Styling for "Send a Message" heading */
+  /* Box Model */
+  margin-bottom: 1.5rem; /* Space below form title */
+  /* Typography */
+  font-size: 1.6rem;
+  color: #333;
+  text-align: left;
+}
+
+.contact-form {
+  /* Box Model */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 600px; /* Default max-width, overridden for contact page specifically */
+  margin: 1.5rem auto 0 auto; /* Centered with top margin, can be overridden */
+}
+
+/* Specific adjustments for the contact form on the contact page */
+.contact .contact-form {
+  /* Box Model */
+  max-width: 600px; /* Slightly wider form */
+  margin-top: 0; /* Reset top margin as h3 handles it */
+  margin-left: 0; /* Align form to the left within its container */
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.form-group {
+  /* Box Model */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.25rem; /* Space between form groups, applied in .contact .form-group */
+}
+
+.contact .form-group {
+  /* Ensure margin is applied for contact page form groups */
+  margin-bottom: 1.25rem;
+}
+
+.contact .form-group:last-of-type {
+  /* Remove bottom margin from the last form group (button group) */
+  /* Box Model */
+  margin-bottom: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  /* Box Model */
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 0.25rem; /* Adjust if label is present */
+  margin-bottom: 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  /* Typography */
+  font-size: 1rem;
+  /* Visual */
+  border-radius: 4px;
+  background-color: #fff; /* Added for consistency from .contact specific rules */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); /* Added for consistency */
+  /* Misc */
+  resize: vertical;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Added for consistency */
+}
+
+.contact-form textarea {
+  /* Box Model */
+  min-height: 120px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  /* Visual */
+  border-color: #007acc;
+  box-shadow: 0 0 0 0.2rem rgba(0, 122, 204, 0.2);
+}
+
+.contact .btn {
+  /* Specific button styling for the contact page form */
+  /* Box Model */
+  width: 100%; /* Make button full width */
+  padding: 0.85rem 1.5rem;
+  /* Typography */
+  font-size: 1.05em;
+}
+
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
+
+footer {
+  /* Box Model */
+  padding: 1rem 0;
+  margin-top: auto; /* Push footer to bottom if content is short */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+/* ==========================================================================
+   Responsive Styles - Mobile & Tablet
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  header .container {
+    /* Box Model */
+    flex-wrap: wrap; /* Allow items to wrap if logo is too long for one line with toggle */
+    padding: 0.5rem 1rem;
+  }
+
+  header h1.logo {
+    /* Typography */
+    font-size: 1.25rem; /* Adjust if needed */
+    /* Box Model */
+    margin-right: auto; /* Push logo to the left, toggle will be on right */
+  }
+
+  header nav {
+    /* Box Model */
+    order: 1; /* Ensure nav (containing toggle) comes after logo if flex-wrap occurs */
+    width: auto; /* For toggle button placement */
+  }
+
+  .nav-toggle {
+    /* Box Model */
+    display: block; /* Show hamburger */
+    order: 2; /* Ensure toggle is last in the nav flow if nav-links is also present on desktop */
+  }
+
+  .nav-links {
+    /* Positioning */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    right: 0; /* Make it full width of the header container */
+    z-index: 999; /* Below header sticky z-index, but above main content */
+    /* Box Model */
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack links vertically */
+    width: 100%; /* Ensure full width relative to header .container */
+    margin: 0;
+    padding: 0;
+    /* Typography */
+    list-style: none;
+    /* Visual */
+    background-color: #fff; /* Background for the dropdown */
+    border: 1px solid #ddd;
+    border-top: none; /* Avoid double border with header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    /* Box Model */
+    display: flex; /* Show when active */
+  }
+
+  .nav-links li {
+    /* Box Model */
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav-links a {
+    /* Box Model */
+    display: block;
+    padding: 0.75rem 1rem; /* Padding for tap targets */
+    /* Typography */
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center; /* Center link text */
+    /* Visual */
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-links li:last-child a {
+    /* Visual */
+    border-bottom: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active:hover {
+    /* Ensure hover for active link maintains readability */
+    /* Typography */
+    color: #007acc;
+    /* Visual */
+    background-color: #f0f0f0;
+  }
+
+  .nav-links a.active {
+    /* Mobile active link style */
+    /* Typography */
+    color: #fff;
+    /* Visual */
+    background-color: #007acc;
+  }
+
+  .header-divider {
+    /* Ensure divider is hidden on mobile if not intended */
+    /* Box Model */
+    display: none;
+  }
+
+  .skills-list,
+  .education-list {
+    /* Box Model */
+    padding-left: 1rem; /* Adjust padding for mobile if needed */
+  }
+
+  .contact-form {
+    /* General contact form adjustments for mobile */
+    /* Box Model */
+    max-width: 100%;
+    padding: 0 0.5rem; /* Add some horizontal padding */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    /* Box Model */
+    padding: 0.75rem 0.75rem;
+    /* Typography */
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================================================
+   Responsive Styles - Desktop Overrides (If necessary from mobile-first)
+   ========================================================================== */
+
+@media (min-width: 1025px) {
+  header .container {
+    /* Box Model */
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+    padding: 0.75rem 1rem; /* Restore desktop padding */
+  }
+
+  header h1.logo {
+    /* Typography */
+    font-size: 1.5rem; /* Restore desktop logo size */
+  }
+
+  header nav {
+    /* Box Model */
+    order: 0; /* Reset order */
+    width: auto;
+  }
+
+  .nav-toggle {
+    /* Box Model */
+    display: none !important; /* Ensure it's hidden */
+  }
+
+  .nav-links {
+    /* Positioning */
+    position: static; /* Override absolute positioning */
+    /* Box Model */
+    display: flex !important; /* Ensure it's flex */
+    flex-direction: row; /* Horizontal links */
+    width: auto;
+    padding: 0; /* Reset mobile padding */
+    /* Visual */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .nav-links li {
+    /* Box Model */
+    width: auto;
+  }
+
+  .nav-links a {
+    /* Box Model */
+    padding: 0.5rem 1rem; /* Desktop link padding */
+    /* Typography */
+    font-size: 1rem;
+    text-align: left; /* Restore default text alignment */
+    /* Visual */
+    border-bottom: none; /* Remove mobile border */
+  }
+
+  .nav-links a:hover {
+    /* Desktop hover */
+    /* Typography */
+    color: #007acc;
+    /* Visual */
+    background-color: transparent; /* No background on hover */
+  }
+
+  .nav-links a.active {
+    /* Desktop active link */
+    /* Typography */
+    color: #fff;
+    /* Visual */
+    background-color: #007acc;
+    border-radius: 4px;
+  }
+
+  .nav-links a.active:hover {
+    /* Desktop active link hover */
+    /* Visual */
+    background-color: #005c99; /* Darker hover for active link */
+  }
+
+  .header-divider {
+    /* Box Model */
+    display: none; /* Or 'block' if you want a divider on desktop */
+  }
+}
+
+/* ==========================================================================
+   Responsive Styles - Smaller Devices (Hero Section Adjustments)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    /* Box Model */
+    min-height: 50vh;
+    padding: 2rem 1rem;
+  }
+  .hero h2 {
+    /* Typography */
+    font-size: 1.75rem;
+  }
+  .hero p {
+    /* Typography */
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    /* Box Model */
+    min-height: 40vh;
+    padding: 1.5rem 1rem;
+  }
+  .hero h2 {
+    /* Typography */
+    font-size: 1.5rem;
+  }
+  .hero p {
+    /* Typography */
+    font-size: 0.9rem;
+  }
+}
