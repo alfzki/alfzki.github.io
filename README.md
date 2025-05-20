@@ -2,7 +2,7 @@
 
 This repository contains the source code for my personal portfolio website.
 
-**View the live site:** [https://alfzki.github.io/portofolio/](https://alfzki.github.io/portofolio/)
+**View the live site:** [https://alfzki.github.io](https://alfzki.github.io)
 
 ## About This Project
 
